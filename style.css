@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#warning {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    display: none;
+  }
+  p#warning {
+    width: 100vw;
+    height: auto;
+    padding: 30px;
+    display: block;
+    color: #333333;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 30px;
+  overflow: hidden;
+
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: black;
+
+  transition: 1.8s;
+}
+
+.image-opa {
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 0.2;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: 1s;
+}
+
+.line {
+  width: 60vw;
+  height: 15vw;
+
+  position: absolute;
+  top: 30%;
+  right: 88px;
+
+  transition: 1.8s;
+}
+
+.model {
+  width: 30vw;
+  height: 100vh;
+  padding: 10px;
+
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 1.2s;
+}
+
+.model img {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+button {
+  width: 49px;
+  height: 49px;
+  padding: 10px;
+  border: none;
+
+  font-family: "PingFang SC", serif;
+  border-radius: 50%;
+  background-color: #666666;
+  color: #FFFFFF;
+  font-size: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button div {
+  width: 100%;
+  height: 100%;
+}
+
+#nextButton {
+  position: absolute;
+  right: 88px;
+  bottom: 88px;
+}
+
+#nextButton div {
+  background: url("./static/go.png") center no-repeat;
+  background-size: cover;
+}
+
+#prevButton {
+  position: absolute;
+  left: 88px;
+  bottom: 88px;
+}
+
+#prevButton div {
+  background: url("./static/back.png") center no-repeat;
+  background-size: cover;
+}
+
+#circle {
+  transition: 0.3s;
+}
+
+.square {
+  width: auto;
+  height: auto;
+  padding: 5px 15px;
+  border-radius: 8px;
+
+  background-color: #FFFFFF;
+
+  font-size: 20px;
+  color: #333333;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  opacity: 0;
+
+  animation: 2s fade-out ease-in-out;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#svg {
+  --stroke-length: 0;
+  filter: drop-shadow(0px 0px 5px #FFFFFF);
+}
+
+#path {
+  stroke-dasharray: var(--stroke-length);
+  stroke-dashoffset: var(--stroke-length);
+}
+
+.animate #path {
+  animation: 3s animate-line linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-line {
+  from {
+    stroke-dashoffset: var(--stroke-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
