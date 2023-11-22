@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial,
+    'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC',
+    'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti',
+    SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif;
+}
+
 #warning {
   display: none;
 }
@@ -105,10 +112,10 @@ button {
   padding: 10px;
   border: none;
 
-  font-family: "PingFang SC", serif;
+  font-family: 'PingFang SC', serif;
   border-radius: 50%;
   background-color: #666666;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 24px;
 
   display: flex;
@@ -128,7 +135,7 @@ button div {
 }
 
 #nextButton div {
-  background: url("./static/go.png") center no-repeat;
+  background: url('./static/go.png') center no-repeat;
   background-size: cover;
 }
 
@@ -139,7 +146,7 @@ button div {
 }
 
 #prevButton div {
-  background: url("./static/back.png") center no-repeat;
+  background: url('./static/back.png') center no-repeat;
   background-size: cover;
 }
 
@@ -153,7 +160,7 @@ button div {
   padding: 5px 15px;
   border-radius: 8px;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   font-size: 20px;
   color: #333333;
@@ -180,7 +187,7 @@ button div {
 
 #svg {
   --stroke-length: 0;
-  filter: drop-shadow(0px 0px 5px #FFFFFF);
+  filter: drop-shadow(0px 0px 5px #ffffff);
 }
 
 #path {
