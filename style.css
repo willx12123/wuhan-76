@@ -96,7 +96,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: 1.8s ease-in-out;
+  transition: 1s ease-out;
 }
 
 .model img {
