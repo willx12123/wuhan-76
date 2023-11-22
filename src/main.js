@@ -78,6 +78,17 @@ function onWheel(e) {
   changeImg();
   const temp = new Square(character);
   temp.draw(scale);
+  model.style.transform = `scale(${scaleImageSize(scale).toFixed(2)})`;
+}
+
+function scaleImageSize(scale) {
+  const oldMin = 0;
+  const oldMax = 3000;
+  const newMin = 1;
+  const newMax = 1.3;
+
+  const newValue = ((scale - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
+  return newValue;
 }
 
 function handleNext() {
