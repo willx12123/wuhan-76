@@ -2,14 +2,14 @@ export const color = {
   doctor: ['#000000', '#8F9197', '#CFD4E3'],
   worker: ['#000000', '#7965EC', '#F5C987'],
   volunteer: ['#000000', '#837575', '#ED8888'],
-  ordinary: ['#000000', '#758E82', '#98DEBE']
+  ordinary: ['#000000', '#758E82', '#98DEBE'],
 };
 
 export const backgroundImage = {
   doctor: './static/images/img/doctor.png',
   worker: './static/images/img/worker.png',
   volunteer: './static/images/img/volunteer.png',
-  ordinary: './static/images/img/ordinary.png'
+  ordinary: './static/images/img/ordinary.png',
 };
 
 export const doctor = [
@@ -24,7 +24,7 @@ export const doctor = [
   './static/images/doctor/9.png',
   './static/images/doctor/10.png',
   './static/images/doctor/11.png',
-  './static/images/doctor/12.png'
+  './static/images/doctor/12.png',
 ];
 
 export const worker = [
@@ -39,7 +39,7 @@ export const worker = [
   './static/images/worker/9.png',
   './static/images/worker/10.png',
   './static/images/worker/11.png',
-  './static/images/worker/12.png'
+  './static/images/worker/12.png',
 ];
 
 export const ordinary = [
@@ -54,7 +54,7 @@ export const ordinary = [
   './static/images/ordinary/9.png',
   './static/images/ordinary/10.png',
   './static/images/ordinary/11.png',
-  './static/images/ordinary/12.png'
+  './static/images/ordinary/12.png',
 ];
 
 export const volunteer = [
@@ -69,86 +69,14 @@ export const volunteer = [
   './static/images/volunteer/9.png',
   './static/images/volunteer/10.png',
   './static/images/volunteer/11.png',
-  './static/images/volunteer/12.png'
+  './static/images/volunteer/12.png',
 ];
 
 export const lineData = [
-  0,
-  46,
-  80,
-  892,
-  315,
-  356,
-  378,
-  576,
-  894,
-  1033,
-  1242,
-  1967,
-  1766,
-  1501,
-  1985,
-  1379,
-  1921,
-  1552,
-  1104,
-  13436,
-  3910,
-  1923,
-  1548,
-  1690,
-  1600,
-  1660,
-  615,
-  319,
-  314,
-  541,
-  348,
-  464,
-  370,
-  383,
-  313,
-  420,
-  565,
-  193,
-  111,
-  114,
-  131,
-  126,
-  74,
-  41,
-  36,
-  17,
-  13,
-  8,
-  5,
-  4,
-  4,
-  4,
-  1,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0
+  0, 46, 80, 892, 315, 356, 378, 576, 894, 1033, 1242, 1967, 1766, 1501, 1985, 1379, 1921, 1552,
+  1104, 13436, 3910, 1923, 1548, 1690, 1600, 1660, 615, 319, 314, 541, 348, 464, 370, 383, 313, 420,
+  565, 193, 111, 114, 131, 126, 74, 41, 36, 17, 13, 8, 5, 4, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+  0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
 ];
 
 export const listData = [
@@ -194,5 +122,5 @@ export const listData = [
   '李兰娟院士团队撤离武汉。',
   '武汉全城红灯 车辆停驶3分钟 追悼烈士和逝世同胞。',
   '1400多名医疗队员撤离。',
-  '武汉解封。'
+  '武汉解封。',
 ];

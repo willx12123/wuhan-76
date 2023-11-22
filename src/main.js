@@ -1,12 +1,4 @@
-import {
-  lineData,
-  color,
-  doctor,
-  worker,
-  ordinary,
-  volunteer,
-  backgroundImage
-} from './data.js';
+import { lineData, color, doctor, worker, ordinary, volunteer, backgroundImage } from './data.js';
 
 import { Square } from './Square.js';
 
@@ -14,7 +6,7 @@ const img = {
   doctor,
   worker,
   ordinary,
-  volunteer
+  volunteer,
 };
 
 // 标准化系数，规定到0-100之间
@@ -42,9 +34,9 @@ let scale = 0;
 function drawLine() {
   const pathData = [];
   for (let i = 0; i < lineData.length; i++) {
-    pathData.push(`${ padding * i },${ lineData[i] * NORMALIZED }`);
+    pathData.push(`${padding * i},${lineData[i] * NORMALIZED}`);
   }
-  path.setAttribute('d', `M${ pathData.join(' ') }`);
+  path.setAttribute('d', `M${pathData.join(' ')}`);
   const lineLength = Math.ceil(path.getTotalLength()).toString();
   svg.style.setProperty('--stroke-length', lineLength);
   svg.classList.add('animate');
@@ -61,12 +53,12 @@ window.addEventListener('load', () => {
 });
 
 function changeColor() {
-  const nextColor = ~~(scale * 2 / 3000);
+  const nextColor = ~~((scale * 2) / 3000);
   container.style.backgroundColor = color[characters[character]][nextColor];
 }
 
 function changeImg() {
-  const nextImg = ~~(scale * 11 / 3000);
+  const nextImg = ~~((scale * 11) / 3000);
   modelImg.setAttribute('src', img[characters[character]][nextImg]);
 }
 
@@ -78,7 +70,7 @@ function onWheel(e) {
   } else {
     scale += e.deltaY;
   }
-  const cx = (scale / (MAX - MIN) * 400).toString();
+  const cx = ((scale / (MAX - MIN)) * 400).toString();
   const cy = (lineData[~~((scale / (MAX - MIN)) * 76)] * NORMALIZED + 1).toString();
   circle.setAttribute('x', cx);
   circle.setAttribute('y', cy);
@@ -114,7 +106,7 @@ function handlePrev() {
 
 function fadeAnimation() {
   model.style.opacity = '0';
-  character % 2 === 0 ? line.style.right = '30px' : line.style.right = '33vw';
+  character % 2 === 0 ? (line.style.right = '30px') : (line.style.right = '33vw');
   setTimeout(() => {
     changeImg();
     if (character % 2 === 0) {
