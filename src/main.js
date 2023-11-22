@@ -2,6 +2,8 @@ import { lineData, color, doctor, worker, ordinary, volunteer, backgroundImage }
 
 import { Square } from './Square.js';
 
+import { throttle } from './utils.js';
+
 const img = {
   doctor,
   worker,
@@ -31,6 +33,32 @@ const characters = ['doctor', 'worker', 'volunteer', 'ordinary'];
 let character = 0;
 let scale = 0;
 
+const FLAG_DECREASE = 0;
+const FLAG_ADD = 1;
+
+function autoPlay(flag) {
+  requestAnimationFrame(() => onAnimationFrame(flag));
+}
+
+function onAnimationFrame(flag) {
+  if (flag === FLAG_ADD) {
+    scale += 1;
+  } else {
+    scale -= 1;
+  }
+  console.log(scale);
+  if (scale >= MAX) {
+    scale = MAX;
+    flag = FLAG_DECREASE;
+  } else if (scale <= MIN) {
+    scale = MIN;
+    flag = FLAG_ADD;
+  }
+  handleImage();
+  handlePointer();
+  autoPlay(flag);
+}
+
 function drawLine() {
   const pathData = [];
   for (let i = 0; i < lineData.length; i++) {
@@ -50,6 +78,7 @@ window.addEventListener('load', () => {
   container.addEventListener('wheel', onWheel);
   nextButton.addEventListener('click', handleNext);
   prevButton.addEventListener('click', handlePrev);
+  autoPlay(FLAG_ADD);
 });
 
 function changeColor() {
@@ -70,16 +99,24 @@ function onWheel(e) {
   } else {
     scale += e.deltaY;
   }
+  handlePointer();
+  handleImage();
+}
+
+function handlePointer() {
   const cx = ((scale / (MAX - MIN)) * 400).toString();
   const cy = (lineData[~~((scale / (MAX - MIN)) * 76)] * NORMALIZED + 1).toString();
   circle.setAttribute('x', cx);
   circle.setAttribute('y', cy);
+}
+
+const handleImage = throttle(() => {
   changeColor();
   changeImg();
   const temp = new Square(character);
   temp.draw(scale);
   model.style.transform = `scale(${scaleImageSize(scale).toFixed(2)})`;
-}
+}, 200);
 
 function scaleImageSize(scale) {
   const oldMin = 0;
